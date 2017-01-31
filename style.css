@@ -1,0 +1,11 @@
+body {
+	margin: 0px;
+}
+.page-wrapper {
+	width: 940px;
+	margin: 0px auto;
+}
+header {
+	background-color: #404041;
+	background-size: cover;
+}
