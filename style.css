@@ -3,10 +3,14 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
-section {
+/*section {
 	margin: 0 auto;
 	text-align: center;
 	padding: 20px 20px;
+}*/
+
+.page-wrapper {
+	text-align: center;
 }
 
 header {
@@ -37,7 +41,7 @@ button {
 
 }
 
-:placeholder-shown {
+input:placeholder-shown {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 	padding: 10px;
@@ -62,4 +66,10 @@ p {
 h2 {
 	font-weight: 700;
 	font-size: 72;
+}
+button:disabled {
+
+}
+button:hover {
+
 }

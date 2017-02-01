@@ -3,24 +3,28 @@
 	<head>
 		<title>Number Guesser</title>
 		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	</head>
 	<body>
 	<div class="page-wrapper">
 		<header>
-			<h1>Number Guesser</h1>
+			<h1><span class="pink-font">Number</span> Guesser</h1>
 		</header>
-		<input placeholder="Enter Your Guess" id="guess-input"></input>
-		<button class="button" id="guess-button">Guess</button>
-		<button class="button" id="clear-button">Clear</button>
-		<div class="your-guess">
-			<p>Your last guess was</p>
-			 <h2 class="your-guess-number">0</h2>
-			<p id="guess-level" class="number-level">That is too low</p>
-		</div>
-		<button class="button" id="reset-button">Reset</button>
-	</div>
+		<div class="input">
+				<input placeholder="Enter Your Guess" id="guess-input"></input>
+				<button class="button" id="guess-button" disabled= "true">Guess</button>
+				<button class="button" disabled="true" id="clear-button">Clear</button>
+			</div>
+			<div class="your-guess">
+				<p>Your last guess was</p>
+			 	<h2 class="your-guess-number">0</h2>
+				<p id="guess-level" class="number-level">That is too low</p>
+				<button class="button" id="reset-button" disabled="true">Reset</button>
+			</div>
 
+	</div>
 	<script src="script.js"></script>
 	</body>
 </html>

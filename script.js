@@ -43,6 +43,9 @@ function compareNumber(newNum, ranNum) {
  	 	tooLow()
  	} else if (newNum > ranNum) {
 		console.log('too high');
+	// } else {
+	// 	alert("that's not a number");
+	// }
 
 		tooHigh()
  	} else if (newNum === ranNum){
@@ -50,6 +53,8 @@ function compareNumber(newNum, ranNum) {
 
  		justRight()}
 	}
+
+	// else here
 // clear the input field when clear button is clicked
 var clearButton = document.getElementById('clear-button');
 
@@ -66,3 +71,7 @@ resetButton.addEventListener('click',function () {
 	document.getElementById('guess-level').innerText = "";
 	lastGuess.innerText= "";
 });
+
+// when onkeyup in input, enable guess button and verify it is a number
+// !Nan
+//typeof
