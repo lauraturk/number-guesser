@@ -9,19 +9,24 @@ body {
 	padding: 0 0 20px 0;
 }
 
-header {
+.banner {
 	background-color: #404041;
 	background-size: cover;
 	height: auto;
 	text-align: center
 }
 
-h1 {
+.title {
 	padding: 20px 20px;
 	margin: 0 auto;
 	color: #E6E7E8;
 	font-weight: 300;
 	font-size: 40;
+}
+
+p {
+	color: #404041;
+	font-size: 20px;
 }
 
 .pink-font {
@@ -34,7 +39,12 @@ button:disabled {
 	color: #FFFFFF;
 }
 
-button {
+button:hover {
+	background-color: #EB008B;
+	color: #FFFFFF;
+}
+
+.button {
 	font-family: 'Open Sans', sans-serif;
 	background-color:#929497;
 	font-size: 20px;
@@ -66,37 +76,33 @@ input {
 	margin: 1em 0;
 }
 
-p {
-	color: #404041;
-	font-size: 20px;
-}
+
 
 .input {
 	width: 320px;
 	margin: 1em auto;
 	clear: both;
 }
+
 .your-guess {
 	clear: both;
 	margin: 0 auto;
 }
+
 .your-guess-number {
 	font-weight: 300;
 	font-size: 160;
 	color: #EB008B;
 	margin: 20px;
-
 }
+
 .space {
 	clear: both;
 	height:20px
 }
-button:hover {
-	background-color: #EB008B;
-	color: #FFFFFF;
-}
+
 @media only screen and (max-width:480px){
-	button {
+	.button {
 		width: 100%;
 		margin: 5px auto;
 	}
@@ -107,6 +113,11 @@ button:hover {
 	#reset-button {
 		margin: 0px auto 30px auto;
 		width: 90%;
+	}
+	input {
+		border-style: solid;
+		border-color: #D0D2D3;
+		border-width: 1px;
 	}
 }
 
