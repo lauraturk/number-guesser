@@ -13,19 +13,6 @@ var minInput = document.querySelector('#min-input');
 var maxInput = document.querySelector('#max-input');
 var setButton = document.querySelector('#set-button');
 
-//set the min/max based on user input
-// function thresholdSet() {
-// 	ranMin = parseInt(minInput.value, 10);
-// 	ranMax = parseInt(maxInput.value,10);
-// }
-
-setButton.addEventListener('click', function(){
-	ranMin = parseInt(minInput.value, 10);
-	ranMax = parseInt(maxInput.value,10);
-	// thresholdSet();
-	console.log(ranMin, ranMax);
-	randomNumber(ranMin, ranMax);
-})
 
 //create a random number
 function randomNumber (ranMin, ranMax) {
@@ -75,6 +62,15 @@ function compareNumber(newNum, ranNum) {
 	}
 }
 
+//event listener for initializing min max and random number
+setButton.addEventListener('click', function(){
+	ranMin = parseInt(minInput.value, 10);
+	ranMax = parseInt(maxInput.value,10);
+	// thresholdSet();
+	console.log(ranMin, ranMax);
+	randomNumber(ranMin, ranMax);
+})
+
 //event listener for enabling buttons
 guessInput.addEventListener('keyup',function (){
 	guessButton.disabled=false;
@@ -93,6 +89,8 @@ guessButton.addEventListener('click', function (){
 // clear the input field when clear button is clicked
 clearButton.addEventListener('click', function(){
 	guessInput.value = "";
+	minInput.value = "";
+	maxInput.value = "";
 	clearButton.disabled=true;
 })
 
