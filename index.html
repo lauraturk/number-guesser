@@ -14,11 +14,14 @@
 		</header>
 		<div class="input">
 				<input placeholder="Enter Your Guess" id="guess-input"></input>
-				<button class="button" id="guess-button" disabled= "true">Guess</button>
-				<button class="button" disabled="true" id="clear-button">Clear</button>
-			</div>
+				<div class="top-buttons">
+					<button class="button" id="guess-button" disabled="true">Guess</button>
+					<button class="button" disabled="true" id="clear-button">Clear</button>
+				</div>
+		</div>
 			<div class="your-guess">
-				<p>Your last guess was</p>
+				<div class="space"></div>
+				<p>Your last guess was:</p>
 			 	<h2 class="your-guess-number">0</h2>
 				<p id="guess-level" class="number-level">That is too low</p>
 				<button class="button" id="reset-button" disabled="true">Reset</button>
