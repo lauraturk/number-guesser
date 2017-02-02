@@ -1,7 +1,10 @@
 // define global variables
-var guessInput = document.getElementById("guess-input");
-var guessButton = document.getElementById("guess-button");
+var guessInput = document.querySelectorAll("#guess-input")[0];
+var guessButton = document.querySelector("#guess-button");
 var lastGuess = document.querySelector(".your-guess-number");
+var resetButton = document.querySelector('#reset-button');
+var clearButton = document.querySelector('#clear-button');
+var guessLevel = document.querySelector('#guess-level');
 var ranNum;
 var ranMin = 1;
 var ranMax = 100;
@@ -10,68 +13,79 @@ var newNumber;
 
 
 
-// guess input to h1 and check against random number change text to say too high or too low
+//create a random number
 function randomNumber (ranMin, ranMax) {
 	ranNum = Math.floor(Math.random() * (ranMax - ranMin + 1) + ranMin);
 	console.log('random number is ', ranNum);
-	return ranNum;
 	}
 
 randomNumber(ranMin, ranMax);
 
-guessButton.addEventListener('click', function (){
-	newNumber = parseInt(guessInput.value, 10);
-	lastGuess.innerText = newNumber;
-	compareNumber(newNumber, ranNum);
-});
-
+//feedback functions
 function tooHigh(){
-	document.getElementById('guess-level').innerText = "That is too high";
+	guessLevel.innerText = "That is too high";
 }
 
 function tooLow() {
-	document.getElementById('guess-level').innerText = "That is too low";
+	guessLevel.innerText = "That is too low";
 }
 
 function justRight(){
-	document.getElementById('guess-level').innerText = "BOOM!";
+	guessLevel.innerText = "BOOM! Let's make this harder. New min is " + ranMin + " new max is " + ranMax + ". Click Reset to continue.";
 }
 
+function notANumber(){
+	lastGuess.innerText = "NOPE";
+	guessLevel.innerText = "Use a number between " + ranMin + " and " + ranMax;
+}
+//compare guess number to random number
 function compareNumber(newNum, ranNum) {
-	if (newNum < ranNum) {
+	if (newNumber > ranMax){
+		console.log('can you hear me?')
+		notANumber();
+	} else if (newNumber < ranMin){
+		notANumber();
+	} else if (newNum < ranNum) {
 		console.log('too low');
  	 	tooLow()
  	} else if (newNum > ranNum) {
 		console.log('too high');
-	// } else {
-	// 	alert("that's not a number");
-	// }
-
 		tooHigh()
  	} else if (newNum === ranNum){
 		console.log('yep');
-
- 		justRight()}
+		ranMax += 10;
+		ranMin -= 11;
+		justRight()
+	} else if (newNum.toString() === "NaN") {
+		notANumber();
 	}
+}
 
-	// else here
+//event listener for enabling buttons
+guessInput.addEventListener('keyup',function (){
+	guessButton.disabled=false;
+});
+
+//event listener for comparing numbers
+guessButton.addEventListener('click', function (){
+	newNumber = parseInt(guessInput.value, 10);
+	lastGuess.innerText = newNumber;
+	compareNumber(newNumber, ranNum);
+	clearButton.disabled=false;
+	resetButton.disabled=false;
+	guessButton.disabled=true;
+});
+
 // clear the input field when clear button is clicked
-var clearButton = document.getElementById('clear-button');
-
 clearButton.addEventListener('click', function(){
-	document.getElementById('guess-input').value = "";
+	guessInput.value = "";
+	clearButton.disabled=true;
 })
 
 // reset the form when reset button is clicked
-var resetButton = document.getElementById('reset-button')
-
 resetButton.addEventListener('click',function () {
-	document.getElementById('guess-input').value = "";
+	guessInput.value = "";
 	randomNumber(ranMin, ranMax);
-	document.getElementById('guess-level').innerText = "";
+	guessLevel.innerText = "";
 	lastGuess.innerText= "";
 });
-
-// when onkeyup in input, enable guess button and verify it is a number
-// !Nan
-//typeof
