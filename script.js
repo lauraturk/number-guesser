@@ -6,12 +6,26 @@ var resetButton = document.querySelector('#reset-button');
 var clearButton = document.querySelector('#clear-button');
 var guessLevel = document.querySelector('#guess-level');
 var ranNum;
-var ranMin = 1;
-var ranMax = 100;
+var ranMin;
+var ranMax;
 var newNumber;
+var minInput = document.querySelector('#min-input');
+var maxInput = document.querySelector('#max-input');
+var setButton = document.querySelector('#set-button');
 
+//set the min/max based on user input
+// function thresholdSet() {
+// 	ranMin = parseInt(minInput.value, 10);
+// 	ranMax = parseInt(maxInput.value,10);
+// }
 
-
+setButton.addEventListener('click', function(){
+	ranMin = parseInt(minInput.value, 10);
+	ranMax = parseInt(maxInput.value,10);
+	// thresholdSet();
+	console.log(ranMin, ranMax);
+	randomNumber(ranMin, ranMax);
+})
 
 //create a random number
 function randomNumber (ranMin, ranMax) {

@@ -55,7 +55,12 @@ button:hover {
 	color: #FFFFFF;
 }
 
-.top-buttons .button:first-of-type {
+.top-buttons .button:first-of-type{
+	display: block;
+	margin: 20px auto;
+}
+
+.top-buttons .button:nth-of-type(2n+2) {
 	float: left;
 }
 
@@ -91,7 +96,7 @@ input {
 
 .your-guess-number {
 	font-weight: 300;
-	font-size: 160;
+	font-size: 130;
 	color: #EB008B;
 	margin: 20px;
 }
